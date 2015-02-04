@@ -1,0 +1,80 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+sourceCompatibility = 1.5
+version = "1.0.0"
+group = "br.com.litecode"
+archivesBaseName = "litefaces-enum-i18n"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'javax.faces:javax.faces-api:2.2'
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'LiteFaces Enum i18n'
+                packaging 'jar'
+                description """
+                    LiteFaces Enum-i18n is a simple utility library with enhanced support for JavaServer Faces (JSF 1.x and 2.0) enabling internationalization of
+                    enum fields. The library providing a set of EL functions to simplify the basic tasks of translating and styling enum values in a JSF page."""
+                url 'http://www.example.com/example-application'
+
+                scm {
+                    connection 'scm:svn:http://192.241.170.12/svn/litecode/trunk/'
+                    developerConnection 'scm:svn:http://192.241.170.12/svn/litecode/trunk/'
+                    url 'http://192.241.170.12/svn/litecode/trunk/'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'thiagowolff'
+                        name 'Thiago Wolff'
+                        email 'thiago.wolff@litecode.com.br'
+                    }
+                }
+            }
+        }
+    }
+}
