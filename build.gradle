@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 sourceCompatibility = 1.5
-version = "1.0.0"
+version = "1.0.1"
 group = "br.com.litecode"
 archivesBaseName = "litefaces-enum-i18n"
 
@@ -55,9 +55,9 @@ uploadArchives {
                 url 'http://www.example.com/example-application'
 
                 scm {
-                    connection 'scm:svn:http://192.241.170.12/svn/litecode/trunk/'
-                    developerConnection 'scm:svn:http://192.241.170.12/svn/litecode/trunk/'
-                    url 'http://192.241.170.12/svn/litecode/trunk/'
+                    connection 'scm:svn:https://github.com/thiagowolff/litefaces-enum-i18n/'
+                    developerConnection 'scm:svn:https://github.com/thiagowolff/litefaces-enum-i18n/'
+                    url 'https://github.com/thiagowolff/litefaces-enum-i18n/'
                 }
 
                 licenses {
