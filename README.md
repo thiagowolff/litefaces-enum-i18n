@@ -10,7 +10,7 @@
 <dependency>
   <groupId>br.com.litecode</groupId>
   <artifactId>litefaces-enum-i18n</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 
