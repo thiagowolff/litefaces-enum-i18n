@@ -3,7 +3,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 sourceCompatibility = 1.5
-version = "1.0.1"
+version = "1.0.2"
 group = "br.com.litecode"
 archivesBaseName = "litefaces-enum-i18n"
 
@@ -50,9 +50,9 @@ uploadArchives {
                 name 'LiteFaces Enum i18n'
                 packaging 'jar'
                 description """
-                    LiteFaces Enum-i18n is a simple utility library with enhanced support for JavaServer Faces (JSF 1.x and 2.0) enabling internationalization of
-                    enum fields. The library providing a set of EL functions to simplify the basic tasks of translating and styling enum values in a JSF page."""
-                url 'http://www.example.com/example-application'
+                    LiteFaces Enum-i18n is a simple utility library with enhanced support for JavaServer Faces (JSF 2.x) enabling internationalization of
+                    enum fields. The library provides a set of EL functions to simplify the basic tasks of translating and styling enum values in a JSF page."""
+                url 'https://github.com/thiagowolff/litefaces-enum-i18n'
 
                 scm {
                     connection 'scm:svn:https://github.com/thiagowolff/litefaces-enum-i18n/'

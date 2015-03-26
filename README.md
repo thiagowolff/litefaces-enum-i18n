@@ -1,5 +1,5 @@
 # litefaces-enum-i18n
-**litefaces-enum-i18n** is a simple utility library with enhanced support for JavaServer Faces (JSF 1.x and 2.0) enabling internationalization of enum fields. The library provides a set of EL functions to simplify the basic tasks of translating and styling enum values in a JSF page.
+**litefaces-enum-i18n** is a simple utility library with enhanced support for JavaServer Faces (JSF 2.x) enabling internationalization of enum fields. The library provides a set of EL functions to simplify the basic tasks of translating and styling enum values in a JSF page.
 
 ## How to use it ?
 
@@ -10,7 +10,7 @@
 <dependency>
   <groupId>br.com.litecode</groupId>
   <artifactId>litefaces-enum-i18n</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
